@@ -30,7 +30,7 @@
            
                 output += `<div class='article'>
                    
-                    <p>country : ${country.countryCode}</p>
+                    <p>country : ${country.countryEmoji} ${country.countryCode}</p>
                     <p>country Name : ${country.countryName}</p>
                     
                     </div>`;
@@ -59,6 +59,7 @@
             border-radius: 5px;
             display: inline-block;
             vertical-align: top;
+            color:white;
         }
         .article img{
             width: 380px;;
