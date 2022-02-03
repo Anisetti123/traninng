@@ -1,0 +1,68 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>country</title>
+</head>
+<body>
+    <h1><B>country</B></h1>
+    <h2>mention your ip address below ?</h2>
+    <h3> please search here</h3>
+    <input type="text" name="a" id="a">
+    <button onclick="fn(document.getElementById('a').value)">search</button>
+    <div id="country">
+        
+    </div>
+    <script>
+          function fn(a) {
+            let url=`https://api.ip2country.info/ip?${a}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(res =>displaycountry(res));
+  }        
+        
+        let displaycountry = (country) => {
+            
+            let output = '';
+            console.log(country)
+           
+                output += `<div class='article'>
+                   
+                    <p>country : ${country.countryCode}</p>
+                    <p>country Name : ${country.countryName}</p>
+                    
+                    </div>`;
+                  
+            
+            document.getElementById('country').innerHTML = output;
+
+        }
+        
+    </script>
+    <style>
+        body{
+            color: rgb(43, 130, 206);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .article{
+            width:400px;
+            background-color: rgb(27, 24, 24);
+            border: 1px solid gray;
+            padding:16px;
+            margin:10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .article img{
+            width: 380px;;
+        }
+    </style>
+</body>
+</html>
