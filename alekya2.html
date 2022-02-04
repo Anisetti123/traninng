@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script></script>
+    </head>
+    <body>
+   <img id="ship1" class="ship" src= "img/ship.gif"/>
+   <img id="ship2" class="ship" src= "img/ship.gif"/>
+    <style>
+            body{
+                background-image: url('img/star.png');
+            }
+            .ship{
+              position:absolute;
+              left:10; top:10;
+            }
+            #ship1{
+                filter:hue-rotate(30deg);
+
+            }
+  </style>
+  <script>
+      let moveship =(ship) => {
+          let x = ship.offset().left;
+          x =+ 100;
+          ship.css({left:x})
+      }
+    $(document).ready(function(){
+      console.log('page is ready');
+      let ship1 = $("#ship1");
+      let ship2 = $("#ship2");
+      ship1.css({top:10});
+      ship2.css({top:100});
+    //   for(i=0;i<100;i++);
+    //   {
+          setInterval(function(){
+            movesship(ship1);
+         },1000)
+
+    //    }
+      
+      
+    })
+  </script>
+</body>
+</html>
