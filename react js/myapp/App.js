@@ -3,10 +3,10 @@ import Todos from "./components/Todos"
 function App() {
  const[todos,setTodos] = useState([
      {id:1,text:"Buy Apple",status:true},
-     {id:1,text:"Buy Pineapple",status:false},
-     {id:1,text:"Buy Kiwi",status:false},
-     {id:1,text:"Buy Oranage",status:true},
-     {id:1,text:"Buy Watermelon",status:false},
+     {id:2,text:"Buy Pineapple",status:false},
+     {id:3,text:"Buy Kiwi",status:false},
+     {id:4,text:"Buy Oranage",status:true},
+     {id:5,text:"Buy Watermelon",status:false},
  ]);
     const toggleTodo =(e) =>{
         console.log(e)
